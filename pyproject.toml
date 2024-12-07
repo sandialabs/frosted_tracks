@@ -1,0 +1,68 @@
+# Packaging instructions for frosted_tracks
+
+[tool.poetry]
+
+name = "frosted_tracks"
+version = "1.0.0"
+description = "Behavioral segmentation and clustering of trajectory data."
+license = "BSD-3-Clause"
+
+packages = [
+    { include = "frosted_tracks", from = "src" }
+]
+
+authors = [
+    "Andy Wilson <atwilso@sandia.gov>",
+    "Keith Dalbey <kdalbey@sandia.gov>",
+    "Daniel DeLayo <drdelay@sandia.gov>",
+    "Renee Gooding <rlgoodn@sanida.gov>",
+    "Jessica Jones <jjones7@sandia.gov>",
+    "Kanad Khanna <kkhanna@sandia.gov>",
+    "Nitin Sharan <nsharan@sandia.gov>",
+    "Jon Whetzel <jhwhetz@sandia.gov"
+]
+
+maintainers = [
+    "Andy Wilson <atwilso@sandia.gov>"
+]
+
+readme = "README.md"
+repository = "https://github.com/sandialabs/frosted_tracks"
+keywords = [
+    "clustering",
+    "ticc",
+    "dbscan",
+    "trajectories",
+    "tracktable"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Information Analysis"
+]
+
+[tool.poetry.dependencies]
+fast_ticc = ">=1.0.1"
+metric_dbscan = ">=1.0.0"
+numba = ">=0.53.0"
+numba-scipy = ">=0.4.0"
+numpy = ">=1.22"
+pandas = ">=2.2.0"
+python = ">=3.9"
+scikit-learn = ">=1.0.0"
+scipy = ">=1.10.0"
+tqdm = ">4.60"
+tracktable = ">=1.7.0"
+
+[build-system]
+requires = [ "poetry-core" ]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib"
+]
+pythonpath = "src"

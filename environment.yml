@@ -1,0 +1,34 @@
+# This file defines an Anaconda environment with all
+# the dependencies we need for Frosted Tracks.
+#
+# To execute:
+#
+# conda env create -f environment.yml
+#
+# Then 'conda activate frosted_tracks' to make the environment
+# current.
+
+name: frosted_tracks
+
+dependencies:
+  - python
+  - jupyterlab
+  - numpy
+  - numba
+  - numba-scipy
+  - pip
+  - pandas
+  - pyproj
+  - pytest
+  - scikit-learn
+  - scipy
+  - tqdm
+  - tracktable
+  - pip:
+    - fast_ticc
+    - metric_dbscan
+    - snap
+    - pytest-arraydiff
+
+
+
