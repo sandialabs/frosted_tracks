@@ -38,6 +38,8 @@
 This is an experimental routine that tries to formulate a good guess
 for the number of clusters (labels) you should ask TICC to compute.
 
+This code is not currently in use.
+
 Written by Keith Dalbey.
 """
 

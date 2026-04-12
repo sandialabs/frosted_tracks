@@ -70,7 +70,7 @@ DISTANCE_BETWEEN_MATRICES=None
 
 def cluster_trajectories(trajectories: List[Trajectory],
                          feature_functions: List[str]=None,
-                         num_labels: Union[int, str]=5,
+                         num_labels: int=5,
                          window_size: int=10,
                          minimum_cluster_size: int=10,
                          maximum_neighbor_distance: int=6
@@ -93,11 +93,8 @@ def cluster_trajectories(trajectories: List[Trajectory],
             'signed_heading_change'].
             See frosted_tracks.feature_functions.register_feature_function
             for details.
-        num_labels {int or str}: Number of different behavioral labels to
-            use.  This should be a positive integer or "estimate".  If
-            you use "estimate" then we will use an experimental method to
-            try to make a reasonable guess based on the properties of
-            the data.  Defaults to 5.
+        num_labels {int}: Number of different behavioral labels to
+            use.  This must be a positive integer.  Defaults to 5.
         window_size {int}: How many points to consider when assigning
             behavioral labels.  Defaults to 10.  This should be set to
             the smallest number of points that will reasonably display
