@@ -33,7 +33,7 @@
 """Top-level functions for labeling trajectories with TICC.
 """
 
-from frosted_tracks.drivers import ticc_label_trajectory, ticc_label_trajectories
+from frosted_tracks.segmentation.drivers import ticc_label_trajectory, ticc_label_trajectories
 
 __all__ = ["ticc_label_trajectory", "ticc_label_trajectories"]
 
