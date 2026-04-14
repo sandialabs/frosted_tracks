@@ -1,4 +1,4 @@
-# Copyright 2024 National Technology & Engineering Solutions of Sandia,
+# Copyright 2026 National Technology & Engineering Solutions of Sandia,
 # LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the
 # U.S. Government retains certain rights in this software.
 #
@@ -30,9 +30,11 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""Test fixtures for use with Pytest in frosted_tracks.test"""
+"""Pytest test configuration for Frosted Tracks"""
 
+import functools
 import pathlib
+import pickle
 import pytest
 
 # Additional fixtures can be found in these modules.
@@ -43,16 +45,70 @@ pytest_plugins = [
     "tests.fixtures.trajectories"
 ]
 
-@pytest.fixture
-def repository_test_directory() -> pathlib.Path:
-    return pathlib.Path(__file__).resolve()
+# This is the infrastructure that lets us update/retrieve
+# golden masters.
+#
+# A 'golden master' is a piece of output cached on disk that
+# a test must replicate in order to succeed.  We use this to
+# check for regressions: if anything changes about the content,
+# something's gone wrong.
+#
+# This was inspired by T. Ben Thompson's blog post "How I Test",
+# accessed on 14 Apr 2026 at https://tbenthompson.com/post/how_i_test/ 
+
+def pytest_addoption(parser):
+    """Add the '--save-golden-masters' command-line option"""
+    parser.addoption(
+        "--save-golden-masters",
+        action="store_true",
+        help="Reset golden master files (remember to commit!)"
+    )
 
 
-@pytest.fixture
-def repository_root(repository_test_directory) -> pathlib.Path:
-    return repository_test_directory.parent
+def _golden_master_directory() -> pathlib.Path:
+    test_directory = pathlib.Path(__file__).resolve().parent
+    return test_directory / "golden_masters"
 
 
-@pytest.fixture
-def frosted_tracks_test_data_directory(repository_root) -> pathlib.Path:
-    return repository_root / "test_data"
+def with_golden_master():
+    """Decorator to make a test use golden master files
+
+    If you passed the command-line argument '--save-golden-masters'
+    to Pytest, this decorator will save the output of your test case
+    in the directory '$root/tests/golden_masters/' under the filename
+    'test_name.pkl'.  If you did not (i.e. just ran pytest), the
+    decorator will load the contents of that file, run the test, 
+    and then assert that golden_master == test_output.
+    """
+
+    def decorator(run_test):
+        try:
+            regenerate_masters = pytest.config.getoption("--save-golden-masters")
+        except AttributeError as e:
+            regenerate_masters = False
+            
+        @functools.wraps(run_test)
+        def wrapper(request, *args, **kwargs):
+            test_result = run_test(request, *args, **kwargs)
+            
+            gm_path = _golden_master_directory()
+            if not gm_path.is_dir():
+                gm_path.mkdir()
+
+            test_name = request.node.name
+            golden_master_filename = gm_path() / f"{test_name}.pkl"
+
+            if regenerate_masters:
+                with open(golden_master_filename, "wb") as outfile:
+                    pickle.dump(test_result, outfile)
+            else:
+                with open(golden_master_filename, "rb") as infile:
+                    golden_master = pickle.load(infile)
+                assert test_result == golden_master
+        return wrapper
+
+    return decorator
+
+
+
+        
