@@ -1,4 +1,4 @@
-# Copyright 2024 National Technology & Engineering Solutions of Sandia,
+# Copyright 2026 National Technology & Engineering Solutions of Sandia,
 # LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the
 # U.S. Government retains certain rights in this software.
 #
@@ -47,7 +47,7 @@ def golden_input():
 
 @pytest.fixture
 def repository_test_directory() -> pathlib.Path:
-    return pathlib.Path(__file__).resolve()
+    return pathlib.Path(__file__).parent.parent.resolve()
 
 
 @pytest.fixture
@@ -59,3 +59,7 @@ def repository_root(repository_test_directory) -> pathlib.Path:
 def frosted_tracks_test_data_directory(repository_root) -> pathlib.Path:
     return repository_root / "test_data"
 
+
+@pytest.fixture
+def frosted_tracks_sample_data_directory(repository_root) -> pathlib.Path:
+    return repository_root / "data"
