@@ -1,4 +1,4 @@
-# Copyright 2024 National Technology & Engineering Solutions of Sandia,
+# Copyright 2026 National Technology & Engineering Solutions of Sandia,
 # LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the
 # U.S. Government retains certain rights in this software.
 #
@@ -30,32 +30,36 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""Test fixtures for use with Pytest in frosted_tracks.test"""
-
-import os.path
 import pytest
+import pathlib
+
+from frosted_tracks.test.infrastructure import ground_truth
 
 @pytest.fixture
-def frosted_tracks_test_directory():
-    here = os.path.dirname(os.path.realpath(__file__))
-    return os.path.join(here, 'src', 'frosted_tracks', 'test')
-
-
-@pytest.fixture
-def frosted_tracks_data_directory(frosted_tracks_test_directory):
-    # test directory is frosted_tracks/repository/src/frosted_tracks/test
-    # we want frosted_tracks/data
-    return os.path.abspath(
-        os.path.join(frosted_tracks_test_directory,
-                     "..", "..", "..", "data"
-        ))
-
-
-@pytest.fixture(scope="module")
 def random_seed():
+    """This is the random seed we will use for all of our test computation"""
     return 12345
 
+@pytest.fixture
+def golden_input():
+    return ground_truth.GroundTruthOracle("frosted_tracks.test.golden_test_inputs")
 
-pytest_plugins = [
-   "frosted_tracks.test.fixtures.pytest_wrappers"
-]
+
+@pytest.fixture
+def repository_test_directory() -> pathlib.Path:
+    return pathlib.Path(__file__).parent.parent.resolve()
+
+
+@pytest.fixture
+def repository_root(repository_test_directory) -> pathlib.Path:
+    return repository_test_directory.parent
+
+
+@pytest.fixture
+def frosted_tracks_test_data_directory(repository_root) -> pathlib.Path:
+    return repository_root / "test_data"
+
+
+@pytest.fixture
+def frosted_tracks_sample_data_directory(repository_root) -> pathlib.Path:
+    return repository_root / "data"

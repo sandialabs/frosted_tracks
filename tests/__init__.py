@@ -1,4 +1,4 @@
-# Copyright 2024 National Technology & Engineering Solutions of Sandia,
+# Copyright 2026 National Technology & Engineering Solutions of Sandia,
 # LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the
 # U.S. Government retains certain rights in this software.
 #
@@ -30,10 +30,7 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""Top-level functions for labeling trajectories with TICC.
-"""
+"""Test fixtures for Frosted Tracks"""
 
-from frosted_tracks.segmentation.drivers import ticc_label_trajectory, ticc_label_trajectories
-
-__all__ = ["ticc_label_trajectory", "ticc_label_trajectories"]
+pass
 

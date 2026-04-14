@@ -1,4 +1,4 @@
-# Copyright 2024 National Technology & Engineering Solutions of Sandia,
+# Copyright 2026 National Technology & Engineering Solutions of Sandia,
 # LLC (NTESS). Under the terms of Contract DE-NA0003525 with NTESS, the
 # U.S. Government retains certain rights in this software.
 #
@@ -30,10 +30,33 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-"""Top-level functions for labeling trajectories with TICC.
-"""
+"""Pytest fixtures related to TICC tests"""
 
-from frosted_tracks.segmentation.drivers import ticc_label_trajectory, ticc_label_trajectories
+import pytest
 
-__all__ = ["ticc_label_trajectory", "ticc_label_trajectories"]
+@pytest.fixture
+def ticc_window_size() -> int:
+    return 10
 
+
+@pytest.fixture(scope="module")
+def ticc_label_switching_cost() -> float:
+    return 200
+
+
+@pytest.fixture(scope="module")
+def ticc_num_clusters() -> int:
+    return 5
+
+
+@pytest.fixture(scope="module")
+def random_seed() -> int:
+    return 12345
+
+
+@pytest.fixture(scope="module")
+def min_meaningful_covariance() -> float:
+    # 1e-4 would seem to be a more useful value but that causes
+    # the TICC solver to get stuck in a loop repopulating clusters
+    return 0
+    
