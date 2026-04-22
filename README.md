@@ -4,7 +4,6 @@ Analysis of trajectory behavior using TICC and DBSCAN
 
 ## Repository Structure
 
-- `doc/`: Documents we need to track (papers and presentations)
 - `src/`: Source code
 
 Best practice: prototype code in a notebook, then move it into
@@ -28,3 +27,10 @@ See the file LICENSE in the root directory of the repository for
 details.  We release this work under a 3-clause BSD license.
 
 
+## Changes
+
+Version 1.0: Initial release.  Not distributed to PyPI.
+
+Version 1.1: Experimental cluster predictor disconnected.  It was causing 
+    build errors when we tried to construct wheels.  You must now supply
+    the desired number of clusters when you call cluster_trajectories.
