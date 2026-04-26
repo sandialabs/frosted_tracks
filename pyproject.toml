@@ -1,29 +1,26 @@
-# Packaging instructions for frosted_tracks
+# Packaging instructions for frosted_tracks.  This uses Poetry
+# as its build back-end.
 
-[tool.poetry]
-
+[project]
 name = "frosted_tracks"
 version = "1.1.0"
 description = "Behavioral segmentation and clustering of trajectory data."
 license = "BSD-3-Clause"
-
-packages = [
-    { include = "frosted_tracks", from = "src" }
-]
+license-files = ["LICENSE"]
 
 authors = [
-    "Andy Wilson <atwilso@sandia.gov>",
-    "Keith Dalbey <kdalbey@sandia.gov>",
-    "Daniel DeLayo <drdelay@sandia.gov>",
-    "Renee Gooding <rlgoodn@sanida.gov>",
-    "Jessica Jones <jjones7@sandia.gov>",
-    "Kanad Khanna <kkhanna@sandia.gov>",
-    "Nitin Sharan <nsharan@sandia.gov>",
-    "Jon Whetzel <jhwhetz@sandia.gov"
+    { name = "Andy Wilson", email = "atwilso@sandia.gov " },
+    { name = "Keith Dalbey", email = "kdalbey@sandia.gov" },
+    { name = "Daniel DeLayo", email = "drdelay@sandia.gov" },
+    { name = "Renee Gooding", email = "rlgoodn@sandia.gov" },
+    { name = "Jessica Jones", email = "jjones7@sandia.gov" },
+    { name = "Kanad Khanna", email = "kkhanna@sandia.gov" },
+    { name = "Nitin Sharan", email = "nsharan@sandia.gov" },
+    { name = "Jon Whetzel", email = "jhwhetz@sandia.gov " }
 ]
 
 maintainers = [
-    "Andy Wilson <atwilso@sandia.gov>"
+    { name = "Andy Wilson", email = "atwilso@sandia.gov "}
 ]
 
 readme = "README.md"
@@ -44,6 +41,19 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Information Analysis"
 ]
 
+[project.urls]
+
+Homepage = "https://github.com/sandialabs/frosted_tracks"
+Issues = "https://github.com/sandialabs/frosted_tracks/issues"
+
+[tool.poetry]
+
+packages = [
+    { include = "frosted_tracks", from = "src" }
+]
+
+
+
 [tool.poetry.dependencies]
 fast_ticc = ">=1.0.1"
 metric_dbscan = ">=1.0.0"
@@ -59,3 +69,4 @@ tracktable = ">=1.7.0"
 [build-system]
 requires = [ "poetry-core" ]
 build-backend = "poetry.core.masonry.api"
+
