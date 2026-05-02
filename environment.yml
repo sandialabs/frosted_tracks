@@ -10,18 +10,21 @@
 
 name: frosted_tracks
 
+channels:
+  - conda-forge
+
 dependencies:
   - python
   - jupyterlab
   - numpy
   - numba
-  - numba-scipy
   - pip
   - pandas
   - pyproj
   - pytest
   - scikit-learn
   - scipy
+  - sphinx
   - tqdm
   - tracktable
   - pip:
@@ -29,6 +32,7 @@ dependencies:
     - metric_dbscan
     - snap
     - pytest-arraydiff
+    - sphinx-rtd-theme
 
 
 
