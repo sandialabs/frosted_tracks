@@ -54,15 +54,18 @@ You can create behavioral labels for your list of ``tracktable`` trajectory obje
                                               window_size=window_size,
                                               num_processors=1)
 
-   Note: Increasing ``num_processors`` from 1 *is usually not what you want*.  Most of the CPU time in Frosted Tracks happens in low-level linear algebra.  This is handled by `BLAS`_ libraries that usually do their own parallelism.  If your installation does this, setting ``num_processors`` greater than 1 will actually slow the algorithm down.
+.. NOTE::
+      Increasing ``num_processors`` from 1 *is usually not what you want*.  Most of the CPU time in Frosted Tracks happens in low-level linear algebra.  This is handled by `BLAS`_ libraries that usually do their own parallelism.  If your installation does this, setting ``num_processors`` greater than 1 will actually slow the algorithm down.
 
 
 
-2. The resulting behavioral labels can be found in ``ticc_results.point_labels``, which is a list of lists.  The value of ``ticc_results.point_labels[i]`` is a list of behavior labels (integers) for the ``i``-th trajectory.  As the behavioral labels are assigned to the center point of each window, the first and last ``window_size/2`` trajectory points will recieve a -1 behavioral label.  Please see the `documentation for fast-ticc <https://fast-ticc.readthedocs.io/en/latest/quirks.html#invalid-cluster-labels-at-beginning-and-end>`_ for more clarity on why this happens.
+1. The resulting behavioral labels can be found in ``ticc_results.point_labels``, which is a list of lists.  The value of ``ticc_results.point_labels[i]`` is a list of behavior labels (integers) for the ``i``-th trajectory.  As the behavioral labels are assigned to the center point of each window, the first and last ``window_size/2`` trajectory points will recieve a -1 behavioral label.  Please see the `documentation for fast-ticc <https://fast-ticc.readthedocs.io/en/latest/quirks.html#invalid-cluster-labels-at-beginning-and-end>`_ for more clarity on why this happens.
 
 
 Clustering Trajectories
 -----------------------
+
+This section coming soon.  The entry point is ``frosted_tracks.cluster_trajectories()``.
 
 
 ..
@@ -73,3 +76,5 @@ Clustering Trajectories
     
     .. code-block:: python
     
+
+.. _BLAS: https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms
