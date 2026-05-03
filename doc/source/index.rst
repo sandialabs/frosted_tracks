@@ -32,7 +32,7 @@ Stay tuned for frequent updates to these pages.
 
 .. [#] Hallac, David, et al. "Toeplitz inverse covariance-based clustering of multivariate time series data." *Proceedings of the 23rd ACM SIGKDD international conference on knowledge discovery and data mining.* 2017.
 
-.. [#] Ester, Martin, et al. "A density-based algorithm for discovering clusters in large spatial databases with noise."  *KDD '96: Proceedings of the Second International Conference on Knowledge Discovery and Data Mining.' 1996.
+.. [#] Ester, Martin, et al. "A density-based algorithm for discovering clusters in large spatial databases with noise."  *KDD '96: Proceedings of the Second International Conference on Knowledge Discovery and Data Mining.'* 1996.
 
 .. _Fast TICC: https://fast-ticc.readthedocs.io
 
