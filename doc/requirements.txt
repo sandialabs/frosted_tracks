@@ -1,30 +1,24 @@
-# This is a requirements.txt from a clean Conda environment containing just Sphinx.
-
-alabaster @ file:///opt/miniconda3/conda-bld/alabaster_1764709087285/work
-babel @ file:///opt/miniconda3/conda-bld/babel_1764159323743/work
-brotlicffi @ file:///opt/miniconda3/conda-bld/brotlicffi_1764961161487/work
-certifi @ file:///Users/ec2-user/croot/certifi_1776971116649/work/certifi
-cffi @ file:///opt/miniconda3/conda-bld/cffi_1761832774023/work
-charset-normalizer @ file:///opt/miniconda3/conda-bld/charset-normalizer_1761744819392/work
-docutils @ file:///opt/miniconda3/conda-bld/docutils_1761746664340/work
-idna @ file:///Users/ec2-user/buildout/croot/idna_1763763781171/work
-imagesize @ file:///Users/ec2-user/buildout/croot/imagesize_1759956241893/work
-Jinja2 @ file:///Users/ec2-user/buildout/croot/jinja2_1761936793528/work
-MarkupSafe @ file:///Users/ec2-user/buildout/croot/markupsafe_1759952215014/work
-packaging==26.0
-pycparser @ file:///Users/ec2-user/croot/pycparser_1774959675151/work
-Pygments @ file:///Users/ec2-user/croot/pygments_1775127041396/work
-PySocks @ file:///opt/miniconda3/conda-bld/pysocks_1761753010104/work
-requests @ file:///Users/ec2-user/croot/requests_1775066169396/work
-roman-numerals @ file:///opt/miniconda3/conda-bld/roman-numerals_1765446479235/work
-snowballstemmer @ file:///Users/ec2-user/buildout/croot/snowballstemmer_1759957284381/work
-Sphinx @ file:///Users/ec2-user/croot/sphinx_1770798087046/work
+alabaster==1.0.0
+babel==2.18.0
+certifi==2026.4.22
+charset-normalizer==3.4.7
+docutils==0.22.4
+idna==3.13
+imagesize==2.0.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+packaging==26.2
+Pygments==2.20.0
+requests==2.33.1
+roman-numerals==4.1.0
+snowballstemmer==3.0.1
+Sphinx==9.1.0
 sphinx_rtd_theme==3.1.0
-sphinxcontrib-applehelp @ file:///croot/sphinxcontrib-applehelp_1744721330488/work
-sphinxcontrib-devhelp @ file:///croot/sphinxcontrib-devhelp_1744727995579/work
-sphinxcontrib-htmlhelp @ file:///croot/sphinxcontrib-htmlhelp_1744718370019/work
+sphinxcontrib-applehelp==2.0.0
+sphinxcontrib-devhelp==2.0.0
+sphinxcontrib-htmlhelp==2.1.0
 sphinxcontrib-jquery==4.1
-sphinxcontrib-jsmath @ file:///home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work
-sphinxcontrib-qthelp @ file:///croot/sphinxcontrib-qthelp_1744721051257/work
-sphinxcontrib-serializinghtml @ file:///croot/sphinxcontrib-serializinghtml_1744724097162/work
-urllib3 @ file:///Users/ec2-user/croot/urllib3_1767810397007/work
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==2.0.0
+sphinxcontrib-serializinghtml==2.0.0
+urllib3==2.6.3
