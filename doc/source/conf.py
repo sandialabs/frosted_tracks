@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Frosted Tracks'
-copyright = '2026, Jessica Jones, Andy Wilson, Keith Dalbey, Daniel DeLayo, Renee Gooding, Kanad Khanna, Nitin Sharan, Jon Whetzel'
+copyright = '2026 National Technology & Engineering Solutions of Sandia, LLC (NTESS).'
 author = 'Jessica Jones, Andy Wilson, Keith Dalbey, Daniel DeLayo, Renee Gooding, Kanad Khanna, Nitin Sharan, Jon Whetzel'
 release = '1.1.0'
 
@@ -24,5 +24,5 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
