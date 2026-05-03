@@ -1,0 +1,30 @@
+# This is a requirements.txt from a clean Conda environment containing just Sphinx.
+
+alabaster @ file:///opt/miniconda3/conda-bld/alabaster_1764709087285/work
+babel @ file:///opt/miniconda3/conda-bld/babel_1764159323743/work
+brotlicffi @ file:///opt/miniconda3/conda-bld/brotlicffi_1764961161487/work
+certifi @ file:///Users/ec2-user/croot/certifi_1776971116649/work/certifi
+cffi @ file:///opt/miniconda3/conda-bld/cffi_1761832774023/work
+charset-normalizer @ file:///opt/miniconda3/conda-bld/charset-normalizer_1761744819392/work
+docutils @ file:///opt/miniconda3/conda-bld/docutils_1761746664340/work
+idna @ file:///Users/ec2-user/buildout/croot/idna_1763763781171/work
+imagesize @ file:///Users/ec2-user/buildout/croot/imagesize_1759956241893/work
+Jinja2 @ file:///Users/ec2-user/buildout/croot/jinja2_1761936793528/work
+MarkupSafe @ file:///Users/ec2-user/buildout/croot/markupsafe_1759952215014/work
+packaging==26.0
+pycparser @ file:///Users/ec2-user/croot/pycparser_1774959675151/work
+Pygments @ file:///Users/ec2-user/croot/pygments_1775127041396/work
+PySocks @ file:///opt/miniconda3/conda-bld/pysocks_1761753010104/work
+requests @ file:///Users/ec2-user/croot/requests_1775066169396/work
+roman-numerals @ file:///opt/miniconda3/conda-bld/roman-numerals_1765446479235/work
+snowballstemmer @ file:///Users/ec2-user/buildout/croot/snowballstemmer_1759957284381/work
+Sphinx @ file:///Users/ec2-user/croot/sphinx_1770798087046/work
+sphinx_rtd_theme==3.1.0
+sphinxcontrib-applehelp @ file:///croot/sphinxcontrib-applehelp_1744721330488/work
+sphinxcontrib-devhelp @ file:///croot/sphinxcontrib-devhelp_1744727995579/work
+sphinxcontrib-htmlhelp @ file:///croot/sphinxcontrib-htmlhelp_1744718370019/work
+sphinxcontrib-jquery==4.1
+sphinxcontrib-jsmath @ file:///home/ktietz/src/ci/sphinxcontrib-jsmath_1611920942228/work
+sphinxcontrib-qthelp @ file:///croot/sphinxcontrib-qthelp_1744721051257/work
+sphinxcontrib-serializinghtml @ file:///croot/sphinxcontrib-serializinghtml_1744724097162/work
+urllib3 @ file:///Users/ec2-user/croot/urllib3_1767810397007/work
