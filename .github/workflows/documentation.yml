@@ -43,7 +43,7 @@ jobs:
 
             - name: Build Documentation
               run: |
-                  pip install doc/requirements.txt
+                  pip install -r doc/requirements.txt
                   cd doc
                   make html
 
