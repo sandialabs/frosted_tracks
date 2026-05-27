@@ -153,7 +153,7 @@ def ticc_label_trajectories(
         ]
 
     results = ticc_joint_labels(all_data_series,
-                                num_Clusters=ticc_num_labels,
+                                num_clusters=ticc_num_labels,
                                 num_processors=cpu_count,
                                 **solver_parameters)
 
