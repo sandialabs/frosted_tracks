@@ -37,4 +37,4 @@
 from frosted_tracks.front_end import cluster_trajectories
 
 __all__ = ["cluster_trajectories"]
-__version__ = "1.1.0"
+__version__ = "1.1.1"
